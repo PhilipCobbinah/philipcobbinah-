@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta content="width=device-width, initial-scale=1.0" name="viewport">
+  <title>Test - Philip Cobbinah Portfolio</title>
+  
+  <!-- Bootstrap CSS -->
+  <link href="assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+  <link href="assets/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
+  
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      padding: 20px;
+      background: #f5f5f5;
+    }
+    .test-section {
+      background: white;
+      padding: 30px;
+      margin: 20px 0;
+      border-radius: 8px;
+      box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+    }
+    .success {
+      color: #28a745;
+      font-weight: bold;
+    }
+    .error {
+      color: #dc3545;
+      font-weight: bold;
+    }
+  </style>
+</head>
+<body>
+
+<div class="container">
+  <h1 class="text-center mb-4">Portfolio Site Diagnostic Test</h1>
+  
+  <div class="test-section">
+    <h3><i class="bi bi-check-circle-fill text-success"></i> Basic HTML/CSS Test</h3>
+    <p>If you can see this page, your basic HTML and CSS are working!</p>
+    <button class="btn btn-primary" onclick="alert('Bootstrap JavaScript is working!')">Test Bootstrap JS</button>
+  </div>
+
+  <div class="test-section">
+    <h3>Required Files Checklist</h3>
+    <ul class="list-group">
+      <li class="list-group-item">
+        <i class="bi bi-folder"></i> <strong>index.html</strong> - Main homepage
+      </li>
+      <li class="list-group-item">
+        <i class="bi bi-folder"></i> <strong>assets/css/main.css</strong> - Custom styles
+      </li>
+      <li class="list-group-item">
+        <i class="bi bi-folder"></i> <strong>assets/js/main.js</strong> - JavaScript functions
+      </li>
+      <li class="list-group-item">
+        <i class="bi bi-folder"></i> <strong>assets/vendor/bootstrap/</strong> - Bootstrap framework
+      </li>
+      <li class="list-group-item">
+        <i class="bi bi-folder"></i> <strong>assets/img/</strong> - Images folder
+      </li>
+    </ul>
+  </div>
+
+  <div class="test-section">
+    <h3>Quick Fixes</h3>
+    <ol>
+      <li>Make sure all vendor folders exist in <code>assets/vendor/</code></li>
+      <li>Check that <code>assets/css/main.css</code> exists</li>
+      <li>Verify <code>assets/js/main.js</code> is present</li>
+      <li>Ensure all images are in <code>assets/img/</code></li>
+    </ol>
+  </div>
+
+  <div class="test-section">
+    <h3>Next Steps</h3>
+    <p>Once you see this page working:</p>
+    <ol>
+      <li>Open <a href="index.html" class="btn btn-sm btn-primary">index.html</a></li>
+      <li>Check browser console (F12) for any errors</li>
+      <li>Verify all images load correctly</li>
+    </ol>
+  </div>
+
+</div>
+
+<!-- Bootstrap JS -->
+<script src="assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+<script>
+  console.log('✅ Test page loaded successfully!');
+  console.log('📁 Check that all files are in the correct locations.');
+</script>
+
+</body>
+</html>

@@ -1,0 +1,591 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta content="width=device-width, initial-scale=1.0" name="viewport">
+  <title>Hult Prize Campus Winners - Team Roboserve | Philip Cobbinah</title>
+  <meta name="description" content="Team Roboserve wins Hult Prize Campus Competition at Regent University College with innovative food delivery robot">
+  <meta name="keywords" content="Hult Prize, Roboserve, Robotics, Social Entrepreneurship, Regent University, Innovation">
+
+  <!-- Favicons -->
+  <link href="assets/img/favicon.png" rel="icon">
+  <link href="assets/img/apple-touch-icon.png" rel="apple-touch-icon">
+
+  <!-- Fonts -->
+  <link href="https://fonts.googleapis.com" rel="preconnect">
+  <link href="https://fonts.gstatic.com" rel="preconnect" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;500;700;900&family=Poppins:wght@100;200;300;400;500;600;700;800;900&family=Raleway:wght@100;200;300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+
+  <!-- Vendor CSS Files -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css" rel="stylesheet">
+  <link href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css" rel="stylesheet">
+  <link href="https://cdn.jsdelivr.net/npm/glightbox/dist/css/glightbox.min.css" rel="stylesheet">
+  <link href="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.css" rel="stylesheet">
+
+  <!-- Main CSS File -->
+  <link href="assets/css/main.css" rel="stylesheet">
+
+  <style>
+    .page-header {
+      background: linear-gradient(135deg, #c41230 0%, #8b0000 50%, #ffd700 100%);
+      color: white;
+      padding: 100px 0 60px;
+      margin-bottom: 40px;
+    }
+    
+    .page-header h1 {
+      font-size: 2.8rem;
+      font-weight: 700;
+      margin-bottom: 15px;
+    }
+    
+    .page-header .badge-winner {
+      background: linear-gradient(135deg, #ffd700, #ffaa00);
+      color: #1a1a1a;
+      padding: 8px 20px;
+      border-radius: 25px;
+      font-weight: 600;
+      font-size: 1rem;
+      display: inline-block;
+      margin-bottom: 15px;
+      box-shadow: 0 4px 15px rgba(255, 215, 0, 0.4);
+    }
+    
+    .page-header p {
+      font-size: 1.2rem;
+      opacity: 0.95;
+    }
+
+    .story-section {
+      background: linear-gradient(135deg, #f8f9fa 0%, #fff5f5 100%);
+      padding: 50px 0;
+      margin-bottom: 40px;
+    }
+
+    .story-card {
+      background: white;
+      border-radius: 20px;
+      padding: 40px;
+      box-shadow: 0 10px 40px rgba(0,0,0,0.1);
+    }
+
+    .story-card h3 {
+      color: #c41230;
+      font-weight: 700;
+      margin-bottom: 25px;
+    }
+
+    .story-card p {
+      font-size: 1.1rem;
+      line-height: 1.8;
+      color: #444;
+    }
+
+    .highlight-box {
+      background: linear-gradient(135deg, #c41230, #8b0000);
+      color: white;
+      border-radius: 15px;
+      padding: 25px;
+      margin: 20px 0;
+    }
+
+    .highlight-box h4 {
+      font-weight: 600;
+      margin-bottom: 15px;
+    }
+
+    .highlight-box ul {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+    }
+
+    .highlight-box ul li {
+      padding: 8px 0;
+      border-bottom: 1px solid rgba(255,255,255,0.2);
+    }
+
+    .highlight-box ul li:last-child {
+      border-bottom: none;
+    }
+
+    .highlight-box ul li i {
+      margin-right: 10px;
+      color: #ffd700;
+    }
+
+    .team-card {
+      background: white;
+      border-radius: 15px;
+      padding: 25px;
+      text-align: center;
+      box-shadow: 0 5px 20px rgba(0,0,0,0.08);
+      height: 100%;
+      transition: all 0.3s ease;
+      border: 2px solid transparent;
+    }
+
+    .team-card:hover {
+      border-color: #c41230;
+      transform: translateY(-5px);
+    }
+
+    .team-card i {
+      font-size: 2.5rem;
+      color: #c41230;
+      margin-bottom: 15px;
+    }
+
+    .team-card h5 {
+      font-weight: 600;
+      color: #333;
+      margin-bottom: 5px;
+    }
+
+    .team-card p {
+      color: #666;
+      font-size: 0.9rem;
+      margin: 0;
+    }
+
+    .feature-card {
+      background: linear-gradient(135deg, #fff, #f8f9fa);
+      border-radius: 15px;
+      padding: 25px;
+      text-align: center;
+      box-shadow: 0 5px 20px rgba(0,0,0,0.08);
+      height: 100%;
+      transition: all 0.3s ease;
+      border-left: 4px solid #c41230;
+    }
+
+    .feature-card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 15px 40px rgba(196,18,48,0.2);
+    }
+
+    .feature-card i {
+      font-size: 2.5rem;
+      color: #c41230;
+      margin-bottom: 15px;
+    }
+
+    .feature-card h5 {
+      font-weight: 600;
+      color: #333;
+      margin-bottom: 10px;
+    }
+
+    .feature-card p {
+      color: #666;
+      font-size: 0.9rem;
+      margin: 0;
+    }
+
+    .hult-info {
+      background: linear-gradient(135deg, #1a1a2e 0%, #16213e 100%);
+      color: white;
+      border-radius: 20px;
+      padding: 30px;
+      margin: 30px 0;
+    }
+
+    .hult-info h4 {
+      color: #ffd700;
+      font-weight: 600;
+      margin-bottom: 15px;
+    }
+
+    .hult-info p {
+      opacity: 0.9;
+      margin: 0;
+    }
+
+    .next-steps {
+      background: linear-gradient(135deg, #ffd700, #ffaa00);
+      color: #1a1a1a;
+      border-radius: 15px;
+      padding: 25px;
+      text-align: center;
+    }
+
+    .next-steps h4 {
+      font-weight: 700;
+      margin-bottom: 10px;
+    }
+
+    .next-steps p {
+      margin: 0;
+      font-size: 1.1rem;
+    }
+
+    .section-divider {
+      text-align: center;
+      margin: 40px 0;
+      position: relative;
+    }
+
+    .section-divider::before {
+      content: '';
+      position: absolute;
+      top: 50%;
+      left: 0;
+      right: 0;
+      height: 2px;
+      background: linear-gradient(90deg, transparent, #c41230, transparent);
+    }
+
+    .section-divider span {
+      background: #f8f9fa;
+      padding: 10px 30px;
+      position: relative;
+      font-weight: 600;
+      color: #c41230;
+      font-size: 1.2rem;
+    }
+
+    .gallery-item {
+      position: relative;
+      border-radius: 15px;
+      overflow: hidden;
+      margin-bottom: 25px;
+      box-shadow: 0 5px 20px rgba(0,0,0,0.1);
+      transition: all 0.3s ease;
+    }
+
+    .gallery-item:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 15px 40px rgba(0,0,0,0.2);
+    }
+
+    .gallery-item img {
+      width: 100%;
+      height: 350px;
+      object-fit: cover;
+      transition: transform 0.3s ease;
+    }
+
+    .gallery-item:hover img {
+      transform: scale(1.05);
+    }
+
+    .gallery-info {
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      background: linear-gradient(transparent, rgba(196, 18, 48, 0.95));
+      color: white;
+      padding: 60px 20px 20px;
+    }
+
+    .gallery-info h4 {
+      font-size: 1.1rem;
+      font-weight: 600;
+      margin-bottom: 5px;
+    }
+
+    .gallery-info p {
+      font-size: 0.9rem;
+      margin: 0;
+      opacity: 0.9;
+    }
+
+    .competitor-card {
+      background: linear-gradient(135deg, #e8f5e9, #fff);
+      border-radius: 15px;
+      padding: 25px;
+      border-left: 4px solid #4caf50;
+    }
+
+    .competitor-card h5 {
+      color: #2e7d32;
+      font-weight: 600;
+      margin-bottom: 15px;
+    }
+
+    .competitor-card p {
+      color: #555;
+      font-size: 0.95rem;
+    }
+  </style>
+</head>
+
+<body class="portfolio-details-page">
+
+  <header id="header" class="header d-flex align-items-center sticky-top">
+    <div class="container-fluid container-xl position-relative d-flex align-items-center justify-content-between">
+      <a href="index.html" class="logo d-flex align-items-center">
+        <h1 class="sitename">Philip Cobbinah</h1>
+      </a>
+      <nav id="navmenu" class="navmenu">
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="index.html#about">About</a></li>
+          <li><a href="index.html#portfolio" class="active">Portfolio</a></li>
+          <li><a href="index.html#contact">Contact</a></li>
+        </ul>
+        <i class="mobile-nav-toggle d-xl-none bi bi-list"></i>
+      </nav>
+    </div>
+  </header>
+
+  <main id="main">
+
+    <!-- Page Header -->
+    <section class="page-header">
+      <div class="container text-center">
+        <span class="badge-winner" data-aos="fade-down">
+          <i class="bi bi-trophy-fill"></i> Campus Champions
+        </span>
+        <h1 data-aos="fade-up">Hult Prize Campus Competition</h1>
+        <p data-aos="fade-up" data-aos-delay="100">
+          <i class="bi bi-robot"></i> Team Roboserve &nbsp;|&nbsp; 
+          <i class="bi bi-cup-hot"></i> Food Innovation &nbsp;|&nbsp; 
+          <i class="bi bi-globe"></i> Social Entrepreneurship &nbsp;|&nbsp;
+          <i class="bi bi-mortarboard"></i> Regent University College
+        </p>
+      </div>
+    </section>
+
+    <!-- Story Section -->
+    <section class="story-section">
+      <div class="container">
+        <div class="row justify-content-center">
+          <div class="col-lg-10">
+            <div class="story-card" data-aos="fade-up">
+              <h3><i class="bi bi-trophy text-warning"></i> Team Roboserve Wins Hult Prize Campus Competition!</h3>
+              
+              <div class="hult-info">
+                <h4><i class="bi bi-info-circle"></i> About the Hult Prize</h4>
+                <p>
+                  The Hult Prize is a prestigious global social entrepreneurship competition that challenges students to 
+                  develop innovative solutions to pressing global issues. This year's challenge focused on 
+                  <strong>"Rethinking Food"</strong> - and Team Roboserve rose to the occasion!
+                </p>
+              </div>
+
+              <p>
+                Congratulations to the Regent University College of Science and Technology team <strong>"Roboserve"</strong> 
+                on winning the Hult Prize Campus competition! Our innovative robot, designed to deliver food in restaurants, 
+                impressed the judges with its creativity and potential for impact.
+              </p>
+
+              <div class="highlight-box">
+                <h4><i class="bi bi-robot"></i> Roboserve Features:</h4>
+                <ul>
+                  <li><i class="bi bi-check-circle-fill"></i> Autonomous food delivery in restaurants</li>
+                  <li><i class="bi bi-check-circle-fill"></i> Coffee mixing capabilities</li>
+                  <li><i class="bi bi-check-circle-fill"></i> Tissue and hand sanitizer dispensing</li>
+                  <li><i class="bi bi-check-circle-fill"></i> Phone charging station</li>
+                  <li><i class="bi bi-check-circle-fill"></i> Smartphone-controlled (with plans for full autonomy)</li>
+                </ul>
+              </div>
+
+              <div class="next-steps mt-4">
+                <h4><i class="bi bi-arrow-right-circle"></i> What's Next?</h4>
+                <p>As campus winners, Team Roboserve will represent Regent University at the <strong>Hult Prize National Competition</strong>, competing against other top teams from across the country!</p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Team Members Section -->
+        <div class="section-divider mt-5">
+          <span><i class="bi bi-people-fill"></i> Team Roboserve</span>
+        </div>
+
+        <div class="row" data-aos="fade-up" data-aos-delay="100">
+          <div class="col-lg-3 col-md-6 mb-4">
+            <div class="team-card">
+              <i class="bi bi-person-circle"></i>
+              <h5>Philip Cobbinah</h5>
+              <p>Information Technology</p>
+              <span class="badge bg-danger">2nd Year</span>
+            </div>
+          </div>
+          <div class="col-lg-3 col-md-6 mb-4">
+            <div class="team-card">
+              <i class="bi bi-person-circle"></i>
+              <h5>Aseda Ayeh-Bampoe</h5>
+              <p>Computer Engineering</p>
+              <span class="badge bg-danger">2nd Year</span>
+            </div>
+          </div>
+          <div class="col-lg-3 col-md-6 mb-4">
+            <div class="team-card">
+              <i class="bi bi-person-circle"></i>
+              <h5>Adwoa Nyarko</h5>
+              <p>Computer Science</p>
+              <span class="badge bg-danger">2nd Year</span>
+            </div>
+          </div>
+          <div class="col-lg-3 col-md-6 mb-4">
+            <div class="team-card">
+              <i class="bi bi-person-circle"></i>
+              <h5>Gifty Arhin</h5>
+              <p>Information Technology</p>
+              <span class="badge bg-danger">2nd Year</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Robot Features Section -->
+        <div class="section-divider mt-4">
+          <span><i class="bi bi-gear"></i> Roboserve Capabilities</span>
+        </div>
+
+        <div class="row" data-aos="fade-up" data-aos-delay="150">
+          <div class="col-lg-3 col-md-6 mb-4">
+            <div class="feature-card">
+              <i class="bi bi-cup-hot"></i>
+              <h5>Coffee Mixing</h5>
+              <p>Automated beverage preparation</p>
+            </div>
+          </div>
+          <div class="col-lg-3 col-md-6 mb-4">
+            <div class="feature-card">
+              <i class="bi bi-droplet"></i>
+              <h5>Sanitizer Dispensing</h5>
+              <p>Hygiene-focused design</p>
+            </div>
+          </div>
+          <div class="col-lg-3 col-md-6 mb-4">
+            <div class="feature-card">
+              <i class="bi bi-phone-vibrate"></i>
+              <h5>Phone Charging</h5>
+              <p>Customer convenience</p>
+            </div>
+          </div>
+          <div class="col-lg-3 col-md-6 mb-4">
+            <div class="feature-card">
+              <i class="bi bi-arrows-move"></i>
+              <h5>Autonomous Navigation</h5>
+              <p>Future upgrade planned</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Competitor Recognition -->
+        <div class="row mt-4" data-aos="fade-up" data-aos-delay="200">
+          <div class="col-lg-8 mx-auto">
+            <div class="competitor-card">
+              <h5><i class="bi bi-award"></i> Honorable Mention: Team AgroLense</h5>
+              <p>
+                We also recognize Team AgroLense, represented by final-year students <strong>Arthur Emmanuel Owusu</strong> (CS), 
+                <strong>Jessica Bajouse</strong> (Psychology), <strong>Idi Adamou Souleymane</strong> (CS), and 
+                <strong>Emmanuel Dzorkah</strong> (IT). Their AI-powered system aims to empower new farmers by simplifying 
+                their entry into agriculture using soil, climate, and environmental analysis for optimal crop selection.
+              </p>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- Gallery Section -->
+    <section id="gallery" class="gallery section">
+      <div class="container">
+
+        <!-- Photo Gallery Section -->
+        <div class="section-divider">
+          <span><i class="bi bi-images"></i> Photo Gallery</span>
+        </div>
+
+        <div class="row" data-aos="fade-up" data-aos-delay="200">
+
+          <!-- Group Pic -->
+          <div class="col-lg-4 col-md-6">
+            <div class="gallery-item">
+              <a href="assets/img/portfolio/leadership/roboserve/group pic.jpeg" data-gallery="roboserve-gallery" class="glightbox">
+                <img src="assets/img/portfolio/leadership/roboserve/group pic.jpeg" alt="Team Roboserve Group Photo">
+              </a>
+              <div class="gallery-info">
+                <h4><i class="bi bi-people-fill text-warning"></i> Team Roboserve</h4>
+                <p>Hult Prize Campus Champions</p>
+              </div>
+            </div>
+          </div>
+
+          <!-- Pitching Pic -->
+          <div class="col-lg-4 col-md-6">
+            <div class="gallery-item">
+              <a href="assets/img/portfolio/leadership/roboserve/pitching pic.jpeg" data-gallery="roboserve-gallery" class="glightbox">
+                <img src="assets/img/portfolio/leadership/roboserve/pitching pic.jpeg" alt="Team Roboserve Pitching">
+              </a>
+              <div class="gallery-info">
+                <h4><i class="bi bi-mic-fill text-info"></i> The Pitch</h4>
+                <p>Presenting Roboserve to judges</p>
+              </div>
+            </div>
+          </div>
+
+          <!-- Team Pic -->
+          <div class="col-lg-4 col-md-6">
+            <div class="gallery-item">
+              <a href="assets/img/portfolio/leadership/roboserve/team.jpeg" data-gallery="roboserve-gallery" class="glightbox">
+                <img src="assets/img/portfolio/leadership/roboserve/team.jpeg" alt="Team Photo">
+              </a>
+              <div class="gallery-info">
+                <h4><i class="bi bi-trophy-fill text-warning"></i> Victory Moment</h4>
+                <p>Celebrating our win!</p>
+              </div>
+            </div>
+          </div>
+
+        </div>
+
+        <!-- Back to Portfolio Button -->
+        <div class="text-center mt-5" data-aos="fade-up">
+          <a href="index.html#portfolio" class="btn btn-primary btn-lg">
+            <i class="bi bi-arrow-left"></i> Back to Portfolio
+          </a>
+        </div>
+
+      </div>
+    </section>
+
+  </main>
+
+  <footer id="footer" class="footer light-background">
+    <div class="container">
+      <div class="copyright text-center">
+        <p>© <span>Copyright</span> <strong class="px-1 sitename">Philip Cobbinah</strong> <span>All Rights Reserved</span></p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Scroll Top -->
+  <a href="#" id="scroll-top" class="scroll-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>
+
+  <!-- Vendor JS Files -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/glightbox/dist/js/glightbox.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.js"></script>
+
+  <!-- Main JS File -->
+  <script src="assets/js/main.js"></script>
+
+  <script>
+    // Initialize AOS
+    AOS.init({
+      duration: 800,
+      easing: 'ease-in-out',
+      once: true
+    });
+
+    // Initialize GLightbox
+    const lightbox = GLightbox({
+      selector: '.glightbox',
+      touchNavigation: true,
+      loop: true
+    });
+  </script>
+
+</body>
+
+</html>

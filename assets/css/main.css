@@ -1,0 +1,1562 @@
+/**
+* Template Name: iPortfolio
+* Template URL: https://bootstrapmade.com/iportfolio-bootstrap-portfolio-websites-template/
+* Updated: Jun 29 2024 with Bootstrap v5.3.3
+* Author: BootstrapMade.com
+* License: https://bootstrapmade.com/license/
+*/
+
+/*--------------------------------------------------------------
+# Font & Color Variables
+--------------------------------------------------------------*/
+/* Fonts */
+:root {
+  --default-font: "Roboto",  system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", "Liberation Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+  --heading-font: "Raleway",  sans-serif;
+  --nav-font: "Poppins",  sans-serif;
+}
+
+/* Global Colors */
+:root { 
+  --background-color: #ffffff;
+  --default-color: #272829;
+  --heading-color: #050d18;
+  --accent-color: #149ddd;
+  --surface-color: #ffffff;
+  --contrast-color: #ffffff;
+}
+
+/* Nav Menu Colors */
+:root {
+  --nav-color: #a8a9b4;
+  --nav-hover-color: #ffffff;
+  --nav-mobile-background-color: #040b14;
+  --nav-dropdown-background-color: #040b14;
+  --nav-dropdown-color: #a8a9b4;
+  --nav-dropdown-hover-color: #ffffff;
+}
+
+/* Color Presets */
+.light-background {
+  --background-color: #f4fafd;
+  --surface-color: #ffffff;
+}
+
+.dark-background {
+  --background-color: #040b14;
+  --default-color: #ffffff;
+  --heading-color: #ffffff;
+  --surface-color: #151f2b;
+  --contrast-color: #ffffff;
+}
+
+/* Smooth scroll */
+:root {
+  scroll-behavior: smooth;
+}
+
+/*--------------------------------------------------------------
+# General Styling & Shared Classes
+--------------------------------------------------------------*/
+body {
+  color: var(--default-color);
+  background-color: var(--background-color);
+  font-family: var(--default-font);
+}
+
+a {
+  color: var(--accent-color);
+  text-decoration: none;
+  transition: 0.3s;
+}
+
+a:hover {
+  color: color-mix(in srgb, var(--accent-color), transparent 25%);
+  text-decoration: none;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  color: var(--heading-color);
+  font-family: var(--heading-font);
+}
+
+/* PHP Email Form Messages */
+.php-email-form .error-message {
+  display: none;
+  background: #df1529;
+  color: #ffffff;
+  text-align: left;
+  padding: 15px;
+  margin-bottom: 24px;
+  font-weight: 600;
+}
+
+.php-email-form .sent-message {
+  display: none;
+  color: #ffffff;
+  background: #059652;
+  text-align: center;
+  padding: 15px;
+  margin-bottom: 24px;
+  font-weight: 600;
+}
+
+.php-email-form .loading {
+  display: none;
+  background: var(--accent-color);
+  text-align: center;
+  padding: 15px;
+  color: #fff;
+  margin-bottom: 20px;
+  border-radius: 4px;
+}
+
+.php-email-form button[type="submit"] {
+  background: var(--accent-color);
+  border: 0;
+  padding: 10px 30px;
+  color: #fff;
+  transition: 0.4s;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.php-email-form button[type="submit"]:hover {
+  background: color-mix(in srgb, var(--accent-color), transparent 20%);
+}
+
+.php-email-form button[type="submit"]:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+/*--------------------------------------------------------------
+# Global Header
+--------------------------------------------------------------*/
+.header {
+  color: var(--default-color);
+  background-color: var(--background-color);
+  position: fixed;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  padding: 0 15px;
+  width: 300px;
+  transition: all ease-in-out 0.3s;
+  overflow-y: auto;
+  z-index: 997;
+  border-right: 1px solid color-mix(in srgb, var(--default-color), transparent 90%);
+}
+
+.header .profile-img img {
+  margin: 15px auto;
+  display: block;
+  width: 120px;
+  border: 8px solid color-mix(in srgb, var(--default-color), transparent 85%);
+}
+
+.header .logo {
+  line-height: 1;
+  margin-bottom: 15px;
+}
+
+.header .logo h1 {
+  font-size: 24px;
+  margin: 0;
+  font-weight: 700;
+  color: var(--heading-color);
+}
+
+.header .social-links {
+  margin: 0 0 20px 0;
+}
+
+.header .social-links a {
+  font-size: 16px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  background: color-mix(in srgb, var(--default-color), transparent 90%);
+  color: var(--default-color);
+  margin: 0 2px;
+  border-radius: 50%;
+  text-align: center;
+  width: 40px;
+  height: 40px;
+  transition: 0.3s;
+}
+
+.header .social-links a:hover {
+  color: var(--contrast-color);
+  background: var(--accent-color);
+}
+
+@media (min-width: 1200px) {
+  .header~main, .header~#footer {
+    margin-left: 300px;
+  }
+}
+
+@media (max-width: 1199px) {
+  .header {
+    left: -100%;
+  }
+}
+
+.header.header-show {
+  left: 0;
+}
+
+.header .header-toggle {
+  color: var(--contrast-color);
+  background-color: var(--accent-color);
+  font-size: 22px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  cursor: pointer;
+  position: fixed;
+  top: 15px;
+  right: 15px;
+  z-index: 9999;
+  transition: background-color 0.3s;
+}
+
+.header .header-toggle:hover {
+  color: var(--contrast-color);
+  background-color: color-mix(in srgb, var(--accent-color) 90%, white 15%);
+}
+
+/*--------------------------------------------------------------
+# Navigation Menu
+--------------------------------------------------------------*/
+.navmenu {
+  padding: 0;
+  z-index: 9997;
+}
+
+.navmenu ul {
+  list-style: none;
+  padding: 0 0 20px 0;
+  margin: 0;
+}
+
+.navmenu a, .navmenu a:focus {
+  color: var(--nav-color);
+  padding: 15px 10px;
+  font-family: var(--nav-font);
+  font-size: 16px;
+  font-weight: 400;
+  display: flex;
+  align-items: center;
+  white-space: nowrap;
+  transition: 0.3s;
+  width: 100%;
+}
+
+.navmenu a .navicon, .navmenu a:focus .navicon {
+  font-size: 20px;
+  margin-right: 10px;
+}
+
+.navmenu a:hover, .navmenu .active, .navmenu .active:focus {
+  color: var(--nav-hover-color);
+}
+
+.navmenu a:hover .navicon, .navmenu .active .navicon, .navmenu .active:focus .navicon {
+  color: var(--accent-color);
+}
+
+/*--------------------------------------------------------------
+# Global Footer
+--------------------------------------------------------------*/
+.footer {
+  color: var(--default-color);
+  background-color: var(--background-color);
+  font-size: 14px;
+  padding: 40px 0;
+  position: relative;
+  border-top: 1px solid color-mix(in srgb, var(--default-color), transparent 90%);
+}
+
+.footer .copyright p {
+  margin-bottom: 0;
+}
+
+.footer .credits {
+  margin-top: 4px;
+  font-size: 13px;
+  text-align: center;
+}
+
+/*--------------------------------------------------------------
+# Preloader
+--------------------------------------------------------------*/
+#preloader {
+  position: fixed;
+  inset: 0;
+  z-index: 999999;
+  overflow: hidden;
+  background: var(--background-color);
+  transition: all 0.6s ease-out;
+}
+
+#preloader:before {
+  content: "";
+  position: fixed;
+  top: calc(50% - 30px);
+  left: calc(50% - 30px);
+  border: 6px solid #ffffff;
+  border-color: var(--accent-color) transparent var(--accent-color) transparent;
+  border-radius: 50%;
+  width: 60px;
+  height: 60px;
+  animation: animate-preloader 1.5s linear infinite;
+}
+
+@keyframes animate-preloader {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+/*--------------------------------------------------------------
+# Scroll Top Button
+--------------------------------------------------------------*/
+.scroll-top {
+  position: fixed;
+  visibility: hidden;
+  opacity: 0;
+  right: 15px;
+  bottom: -15px;
+  z-index: 99999;
+  background-color: var(--accent-color);
+  width: 44px;
+  height: 44px;
+  border-radius: 50px;
+  transition: all 0.4s;
+}
+
+.scroll-top i {
+  font-size: 24px;
+  color: var(--contrast-color);
+  line-height: 0;
+}
+
+.scroll-top:hover {
+  background-color: color-mix(in srgb, var(--accent-color), transparent 20%);
+  color: var(--contrast-color);
+}
+
+.scroll-top.active {
+  visibility: visible;
+  opacity: 1;
+  bottom: 15px;
+}
+
+/*--------------------------------------------------------------
+# Disable aos animation delay on mobile devices
+--------------------------------------------------------------*/
+@media screen and (max-width: 768px) {
+  [data-aos-delay] {
+    transition-delay: 0 !important;
+  }
+}
+
+/*--------------------------------------------------------------
+# Global Page Titles & Breadcrumbs
+--------------------------------------------------------------*/
+.page-title {
+  color: var(--default-color);
+  background-color: var(--background-color);
+  padding: 25px 0;
+  position: relative;
+}
+
+.page-title h1 {
+  font-size: 24px;
+  font-weight: 700;
+}
+
+.page-title .breadcrumbs ol {
+  display: flex;
+  flex-wrap: wrap;
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  font-size: 14px;
+  font-weight: 400;
+}
+
+.page-title .breadcrumbs ol li+li {
+  padding-left: 10px;
+}
+
+.page-title .breadcrumbs ol li+li::before {
+  content: "/";
+  display: inline-block;
+  padding-right: 10px;
+  color: color-mix(in srgb, var(--default-color), transparent 70%);
+}
+
+/*--------------------------------------------------------------
+# Global Sections
+--------------------------------------------------------------*/
+section, .section {
+  color: var(--default-color);
+  background-color: var(--background-color);
+  padding: 60px 0;
+  overflow: clip;
+}
+
+/*--------------------------------------------------------------
+# Global Section Titles
+--------------------------------------------------------------*/
+.section-title {
+  padding-bottom: 60px;
+  position: relative;
+}
+
+.section-title h2 {
+  font-size: 32px;
+  font-weight: 700;
+  margin-bottom: 20px;
+  padding-bottom: 20px;
+  position: relative;
+}
+
+.section-title h2:after {
+  content: "";
+  position: absolute;
+  display: block;
+  width: 50px;
+  height: 3px;
+  background: var(--accent-color);
+  left: 0;
+  bottom: 0;
+}
+
+.section-title p {
+  margin-bottom: 0;
+}
+
+/*--------------------------------------------------------------
+# Hero Section
+--------------------------------------------------------------*/
+.hero {
+  width: 100%;
+  min-height: 100vh;
+  position: relative;
+  padding: 80px 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.hero img {
+  position: absolute;
+  inset: 0;
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  z-index: 1;
+}
+
+.hero:before {
+  content: "";
+  background: color-mix(in srgb, var(--background-color), transparent 70%);
+  position: absolute;
+  inset: 0;
+  z-index: 2;
+}
+
+.hero .container {
+  position: relative;
+  z-index: 3;
+}
+
+.hero h2 {
+  margin: 0;
+  font-size: 64px;
+  font-weight: 700;
+}
+
+.hero p {
+  margin: 5px 0 0 0;
+  font-size: 26px;
+}
+
+.hero p span {
+  letter-spacing: 1px;
+  border-bottom: 2px solid var(--accent-color);
+}
+
+@media (max-width: 768px) {
+  .hero h2 { font-size: 32px; }
+  .hero p { font-size: 20px; }
+}
+
+/*--------------------------------------------------------------
+# About Section
+--------------------------------------------------------------*/
+.about .content h2 {
+  font-weight: 700;
+  font-size: 24px;
+}
+
+.about .content ul {
+  list-style: none;
+  padding: 0;
+}
+
+.about .content ul li {
+  margin-bottom: 20px;
+  display: flex;
+  align-items: center;
+}
+
+.about .content ul strong {
+  margin-right: 10px;
+}
+
+.about .content ul i {
+  font-size: 16px;
+  margin-right: 5px;
+  color: var(--accent-color);
+  line-height: 0;
+}
+
+/*--------------------------------------------------------------
+# Stats Section - Balanced Typography
+--------------------------------------------------------------*/
+.stats i {
+  font-size: 96px; /* Large icon size */
+  display: block;
+  margin: 0 auto 20px;
+  color: var(--accent-color);
+  transition: all 0.3s ease-in-out;
+  cursor: pointer;
+}
+
+.stats i:hover {
+  transform: scale(1.1);
+}
+
+.stats .stats-item {
+  text-align: center;
+}
+
+.stats .stats-item span {
+  font-size: 48px; /* Reduced from 64px - numbers */
+  display: block;
+  font-weight: 700;
+  color: var(--heading-color);
+  margin-bottom: 8px;
+  line-height: 1;
+}
+
+.stats .stats-item p {
+  font-size: 16px; /* Reduced from 20px - text */
+  color: color-mix(in srgb, var(--default-color), transparent 40%);
+  margin: 0;
+  font-weight: 500;
+}
+
+.stats .stats-item p strong {
+  font-size: 18px; /* Reduced from 22px - emphasis */
+  font-weight: 700;
+  color: var(--heading-color);
+}
+
+/* Responsive font sizes */
+@media (max-width: 768px) {
+  .stats i {
+    font-size: 72px;
+  }
+  
+  .stats .stats-item span {
+    font-size: 36px;
+  }
+  
+  .stats .stats-item p {
+    font-size: 14px;
+  }
+  
+  .stats .stats-item p strong {
+    font-size: 16px;
+  }
+}
+
+/*--------------------------------------------------------------
+# Stats Section - Interactive Icon Animations
+--------------------------------------------------------------*/
+.stats i {
+  font-size: 96px;
+  display: block;
+  margin: 0 auto 20px;
+  color: var(--accent-color);
+  transition: all 0.3s ease-in-out;
+  cursor: pointer;
+}
+
+/* Check Circle - Pulse animation */
+.stats .bi-check-circle:hover {
+  animation: pulse 0.6s ease-in-out;
+}
+
+@keyframes pulse {
+  0%, 100% { transform: scale(1); }
+  50% { transform: scale(1.15); }
+}
+
+/* Emoji Smile - Laugh/bounce animation */
+.stats .bi-emoji-smile:hover {
+  animation: laugh 0.8s ease-in-out infinite;
+}
+
+@keyframes laugh {
+  0%, 100% { transform: translateY(0) rotate(0deg); }
+  25% { transform: translateY(-10px) rotate(-5deg); }
+  50% { transform: translateY(0) rotate(5deg); }
+  75% { transform: translateY(-5px) rotate(-3deg); }
+}
+
+/* Trophy - Shake animation */
+.stats .bi-trophy:hover {
+  animation: shake 0.5s ease-in-out;
+}
+
+@keyframes shake {
+  0%, 100% { transform: rotate(0deg); }
+  10%, 30%, 50%, 70%, 90% { transform: rotate(-10deg); }
+  20%, 40%, 60%, 80% { transform: rotate(10deg); }
+}
+
+/* Clock - Spin animation (like clock hands moving) */
+.stats .bi-clock-history:hover {
+  animation: clockSpin 1s ease-in-out;
+}
+
+@keyframes clockSpin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+/* Stop animations when hover ends */
+.stats i:not(:hover) {
+  animation: none;
+}
+
+/*--------------------------------------------------------------
+# Skills Section
+--------------------------------------------------------------*/
+.skills .progress {
+  height: 60px;
+  display: block;
+  background: none;
+  border-radius: 0;
+  margin-bottom: 20px;
+}
+
+.skills .progress .skill {
+  padding: 0;
+  margin: 0 0 6px 0;
+  text-transform: uppercase;
+  display: block;
+  font-weight: 600;
+  font-size: 16px;
+  color: var(--heading-color);
+}
+
+.skills .progress .skill .val {
+  float: right;
+  font-style: normal;
+  font-size: 14px;
+  color: color-mix(in srgb, var(--default-color), transparent 40%);
+}
+
+.skills .progress-bar-wrap {
+  background: color-mix(in srgb, var(--default-color), transparent 90%);
+  height: 10px;
+  border-radius: 50px;
+  overflow: hidden;
+}
+
+.skills .progress-bar {
+  width: 0;
+  height: 10px;
+  transition: 0.9s;
+  background: linear-gradient(90deg, var(--accent-color), color-mix(in srgb, var(--accent-color), white 50%));
+  border-radius: 50px;
+}
+
+/* Progress bar animation */
+.skills.skills-animation .progress-bar {
+  animation: animate-progress-bar 2s cubic-bezier(0.4, 0, 0.2, 1) forwards;
+}
+
+@keyframes animate-progress-bar {
+  0% {
+    width: 0;
+  }
+  100% {
+    width: var(--width);
+  }
+}
+
+/*--------------------------------------------------------------
+# Resume Section
+--------------------------------------------------------------*/
+.resume .resume-title {
+  color: var(--heading-color);
+  font-size: 26px;
+  font-weight: 700;
+  margin-top: 20px;
+  margin-bottom: 20px;
+}
+
+.resume .resume-item {
+  padding: 0 0 20px 20px;
+  margin-top: -2px;
+  border-left: 2px solid var(--accent-color);
+  position: relative;
+}
+
+/*--------------------------------------------------------------
+# Resume Section - Enhanced
+--------------------------------------------------------------*/
+.resume .resume-item {
+  transition: transform 0.3s ease, border-left 0.3s ease;
+}
+
+.resume .resume-item:hover {
+  transform: translateX(5px);
+  border-image: linear-gradient(
+    to bottom, 
+    var(--accent-color), 
+    color-mix(in srgb, var(--accent-color), white 50%)
+  ) 1;
+}
+
+.resume .resume-item h4 {
+  line-height: 18px;
+  font-size: 18px;
+  font-weight: 600;
+  text-transform: uppercase;
+  color: color-mix(in srgb, var(--default-color), transparent 20%);
+  margin-bottom: 10px;
+  transition: color 0.3s ease;
+}
+
+.resume .resume-item:hover h4 {
+  color: color-mix(in srgb, var(--accent-color), white 20%);
+}
+
+.resume .resume-item:hover::before {
+  transform: scale(1.2);
+  transition: transform 0.3s ease;
+}
+
+.resume .resume-item strong {
+  color: var(--accent-color);
+  font-weight: 700;
+}
+
+/* Hover effect for items */
+.resume .resume-item {
+  transition: transform 0.3s ease, border-left 0.3s ease;
+}
+
+.resume .resume-item:hover {
+  transform: translateX(5px);
+  border-image: linear-gradient(
+    to bottom, 
+    var(--accent-color), 
+    color-mix(in srgb, var(--accent-color), white 50%)
+  ) 1;
+}
+
+/* Pulse animation for timeline dots */
+@keyframes pulseDot {
+  0%, 100% {
+    transform: scale(1);
+    opacity: 1;
+  }
+  50% {
+    transform: scale(1.1);
+    opacity: 0.8;
+  }
+}
+
+.resume .resume-item::before {
+  animation: pulseDot 2s ease-in-out infinite;
+}
+
+.resume .resume-item:hover::before {
+  animation: none;
+  background: var(--accent-color);
+  transform: scale(1.3);
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .resume .resume-title {
+    font-size: 22px;
+  }
+  
+  .resume .resume-item h4 {
+    font-size: 16px;
+  }
+  
+  .resume .resume-item h5 {
+    font-size: 14px;
+  }
+  
+  .resume .resume-item:hover {
+    transform: translateX(3px);
+  }
+}
+
+/*--------------------------------------------------------------
+# Portfolio Section
+--------------------------------------------------------------*/
+.portfolio .portfolio-filters {
+  padding: 0;
+  margin: 0 auto 20px auto;
+  list-style: none;
+  text-align: center;
+}
+
+.portfolio .portfolio-filters li {
+  cursor: pointer;
+  display: inline-block;
+  padding: 8px 20px 10px 20px;
+  margin: 0 4px 8px 4px;
+  font-size: 15px;
+  font-weight: 500;
+  line-height: 1;
+  margin-bottom: 5px;
+  border-radius: 50px;
+  transition: all 0.3s ease-in-out;
+  font-family: var(--heading-font);
+  background: color-mix(in srgb, var(--default-color), transparent 95%);
+  color: var(--default-color);
+}
+
+.portfolio .portfolio-filters li:hover,
+.portfolio .portfolio-filters li.filter-active {
+  color: var(--contrast-color);
+  background-color: var(--accent-color);
+  transform: translateY(-2px);
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
+}
+
+.portfolio .portfolio-content {
+  position: relative;
+  overflow: hidden;
+  border-radius: 10px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+  transition: all 0.3s ease;
+}
+
+.portfolio .portfolio-content:hover {
+  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.2);
+  transform: translateY(-5px);
+}
+
+.portfolio .portfolio-content img {
+  transition: 0.3s;
+  width: 100%;
+  height: 300px;
+  object-fit: cover;
+}
+
+.portfolio .portfolio-content .portfolio-info {
+  opacity: 0;
+  position: absolute;
+  inset: 0;
+  z-index: 3;
+  transition: all ease-in-out 0.3s;
+  background: rgba(0, 0, 0, 0.6);
+  padding: 15px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.portfolio .portfolio-content .portfolio-info h4 {
+  font-size: 18px;
+  padding: 5px 10px;
+  font-weight: 600;
+  color: #ffffff;
+  display: inline-block;
+  background-color: var(--accent-color);
+  border-radius: 5px;
+  margin-bottom: 10px;
+  text-align: center;
+}
+
+.portfolio .portfolio-content .portfolio-info p {
+  text-align: center;
+  font-size: 14px;
+  font-weight: 500;
+  color: rgba(255, 255, 255, 0.9);
+  margin-bottom: 15px;
+}
+
+.portfolio .portfolio-content .portfolio-info .preview-link,
+.portfolio .portfolio-content .portfolio-info .details-link {
+  font-size: 26px;
+  color: #fff;
+  transition: 0.3s;
+  line-height: 1.2;
+  margin: 0 8px;
+  display: inline-block;
+}
+
+.portfolio .portfolio-content .portfolio-info .preview-link:hover,
+.portfolio .portfolio-content .portfolio-info .details-link:hover {
+  color: var(--accent-color);
+  transform: scale(1.2);
+}
+
+.portfolio .portfolio-content:hover .portfolio-info {
+  opacity: 1;
+}
+
+.portfolio .portfolio-content:hover img {
+  transform: scale(1.1);
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .portfolio .portfolio-filters li {
+    font-size: 14px;
+    margin: 0 0 10px 0;
+    padding: 6px 15px 8px 15px;
+  }
+  
+  .portfolio .portfolio-content img {
+    height: 250px;
+  }
+  
+  .portfolio .portfolio-content .portfolio-info h4 {
+    font-size: 16px;
+  }
+}
+
+/*--------------------------------------------------------------
+# Services Section
+--------------------------------------------------------------*/
+.services .service-item {
+  position: relative;
+}
+
+.services .service-item .icon {
+  background: var(--accent-color);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 54px;
+  height: 54px;
+  border-radius: 50%;
+  transition: 0.5s;
+  border: 1px solid var(--accent-color);
+  margin-right: 20px;
+}
+
+.services .service-item .icon i {
+  color: var(--contrast-color);
+  font-size: 24px;
+  line-height: 0;
+}
+
+.services .service-item:hover .icon {
+  background: var(--surface-color);
+}
+
+.services .service-item:hover .icon i {
+  color: var(--accent-color);
+}
+
+/*--------------------------------------------------------------
+# Contact Section
+--------------------------------------------------------------*/
+.contact .info-wrap {
+  background-color: var(--surface-color);
+  box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.1);
+  padding: 30px;
+}
+
+.contact .info-item {
+  margin-bottom: 40px;
+}
+
+.contact .info-item i {
+  font-size: 20px;
+  color: var(--accent-color);
+  background: color-mix(in srgb, var(--accent-color), transparent 92%);
+  width: 44px;
+  height: 44px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 50px;
+  transition: all 0.3s ease-in-out;
+  margin-right: 15px;
+}
+
+.contact .info-item:hover i {
+  background: var(--accent-color);
+  color: var(--contrast-color);
+}
+
+/* WhatsApp specific styling */
+.contact .info-item i.bi-whatsapp {
+  color: #25D366 !important;
+  animation: whatsappPulse 2s ease-in-out infinite;
+}
+
+@keyframes whatsappPulse {
+  0%, 100% {
+    transform: scale(1);
+    opacity: 1;
+  }
+  50% {
+    transform: scale(1.05);
+    opacity: 0.9;
+  }
+}
+
+.contact .info-item a[href*="wa.me"] {
+  color: #25D366;
+  text-decoration: none;
+  font-weight: 600;
+  transition: all 0.3s ease;
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+}
+
+.contact .info-item a[href*="wa.me"]:hover {
+  color: #128C7E;
+  text-decoration: underline;
+  transform: translateX(3px);
+}
+
+.contact .info-item a[href*="wa.me"]:active {
+  transform: scale(0.95);
+}
+
+/* Icon hover effect */
+.contact .info-item:hover i {
+  transform: scale(1.1);
+}
+
+.contact .php-email-form {
+  background-color: var(--surface-color);
+  height: 100%;
+  padding: 30px;
+  box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.1);
+}
+
+/*--------------------------------------------------------------
+# Portfolio Details Section
+--------------------------------------------------------------*/
+.portfolio-details .portfolio-info {
+  padding: 30px;
+  box-shadow: 0px 0 30px rgba(0, 0, 0, 0.1);
+}
+
+.portfolio-details .portfolio-info h3 {
+  font-size: 22px;
+  font-weight: 700;
+  margin-bottom: 20px;
+  padding-bottom: 20px;
+  border-bottom: 1px solid color-mix(in srgb, var(--default-color), transparent 85%);
+}
+
+/*--------------------------------------------------------------
+# Service Details Section
+--------------------------------------------------------------*/
+.service-details .services-list {
+  padding: 10px 30px;
+  border: 1px solid color-mix(in srgb, var(--default-color), transparent 90%);
+  margin-bottom: 20px;
+}
+
+.service-details .services-list a {
+  display: block;
+  line-height: 1;
+  padding: 8px 0 8px 15px;
+  border-left: 3px solid color-mix(in srgb, var(--default-color), transparent 70%);
+  margin: 20px 0;
+  color: color-mix(in srgb, var(--default-color), transparent 20%);
+  transition: 0.3s;
+}
+
+.service-details .services-list a.active {
+  color: var(--heading-color);
+  font-weight: 700;
+  border-color: var(--accent-color);
+}
+
+.service-details .services-list a:hover {
+  border-color: var(--accent-color);
+}
+
+.service-box {
+  padding: 20px;
+  background: var(--surface-color);
+  box-shadow: 0px 0 30px rgba(0, 0, 0, 0.1);
+  margin-bottom: 30px;
+}
+
+.service-box h4 {
+  font-size: 20px;
+  font-weight: 700;
+  border-bottom: 2px solid color-mix(in srgb, var(--default-color), transparent 92%);
+  padding-bottom: 15px;
+  margin-bottom: 15px;
+}
+
+.download-catalog a {
+  color: var(--default-color);
+  display: flex;
+  align-items: center;
+  padding: 10px 0;
+  transition: 0.3s;
+}
+
+.download-catalog a i {
+  font-size: 24px;
+  margin-right: 10px;
+  color: var(--accent-color);
+}
+
+.download-catalog a:hover {
+  color: var(--accent-color);
+}
+
+.help-box {
+  background-color: var(--accent-color);
+  color: var(--contrast-color);
+  margin-top: 30px;
+  padding: 30px 15px;
+}
+
+.help-box .help-icon {
+  font-size: 48px;
+  color: color-mix(in srgb, var(--contrast-color), transparent 20%);
+}
+
+.help-box h4 {
+  margin-top: 15px;
+  color: var(--contrast-color);
+}
+
+.help-box p a {
+  color: var(--contrast-color);
+}
+
+/*--------------------------------------------------------------
+# Achievement Section - Enhanced Styling
+--------------------------------------------------------------*/
+
+ /* Base Achievement Item Styling */
+.achievement-item,
+.testimonial-item {
+  padding: 30px;
+  background: linear-gradient(135deg, rgba(79, 70, 229, 0.1), rgba(139, 92, 246, 0.05));
+  border-radius: 15px;
+  margin-bottom: 20px;
+  transition: all 0.3s ease;
+  border: 1px solid rgba(139, 92, 246, 0.2);
+  position: relative;
+  overflow: hidden;
+  backdrop-filter: blur(10px);
+  text-align: center;
+}
+
+/* White text for dark background */
+.testimonial-item h3 {
+  font-size: 1.3rem;
+  font-weight: 700;
+  margin-bottom: 10px;
+  color: #ffffff !important; /* Force white color */
+  transition: all 0.3s ease;
+  position: relative;
+  display: inline-block;
+}
+
+.testimonial-item h4 {
+  font-size: 1rem;
+  color: rgba(255, 255, 255, 0.8) !important; /* Light white for subtitle */
+  margin-bottom: 15px;
+  font-weight: 600;
+}
+
+.testimonial-item p {
+  font-size: 0.95rem;
+  color: rgba(255, 255, 255, 0.9) !important; /* Near white for description */
+  margin: 0;
+  line-height: 1.6;
+  transition: color 0.3s ease;
+}
+
+.testimonial-item:hover p {
+  color: #ffffff !important; /* Pure white on hover */
+}
+
+/* Glowing Border Effect on Hover */
+.achievement-item::before,
+.testimonial-item::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  border-radius: 15px;
+  padding: 2px;
+  background: linear-gradient(135deg, #667eea, #764ba2, #f59e0b);
+  -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+  -webkit-mask-composite: xor;
+  mask-composite: exclude;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+/* Hover State - Lift & Glow */
+.achievement-item:hover,
+.testimonial-item:hover {
+  background: linear-gradient(135deg, rgba(79, 70, 229, 0.2), rgba(139, 92, 246, 0.15));
+  transform: translateY(-5px) scale(1.02);
+  box-shadow: 0 12px 30px rgba(139, 92, 246, 0.4);
+  border-color: rgba(139, 92, 246, 0.4);
+}
+
+.achievement-item:hover::before,
+.testimonial-item:hover::before {
+  opacity: 1;
+  animation: borderGlow 3s linear infinite;
+}
+
+/* Border Glow Animation */
+@keyframes borderGlow {
+  0%, 100% { filter: brightness(1); }
+  50% { filter: brightness(1.5); }
+}
+
+/* Icon Styling for Testimonial Items */
+.testimonial-item i {
+  display: block;
+  margin: 0 auto 20px;
+  transition: all 0.3s ease;
+}
+
+.testimonial-item:hover i {
+  transform: scale(1.1) rotate(5deg);
+  filter: drop-shadow(0 8px 20px rgba(139, 92, 246, 0.4));
+}
+
+/* Title Styling */
+.testimonial-item h3 {
+  font-size: 1.3rem;
+  font-weight: 700;
+  margin-bottom: 10px;
+  color: var(--heading-color);
+  transition: all 0.3s ease;
+  position: relative;
+  display: inline-block;
+}
+
+/* Animated Underline for Titles */
+.testimonial-item h3::after {
+  content: '';
+  position: absolute;
+  bottom: -4px;
+  left: 0;
+  width: 0;
+  height: 3px;
+  background: linear-gradient(90deg, #667eea, #764ba2);
+  border-radius: 2px;
+  transition: width 0.3s ease;
+}
+
+.testimonial-item:hover h3 {
+  transform: translateY(-3px);
+}
+
+.testimonial-item:hover h3::after {
+  width: 100%;
+}
+
+/* Subtitle Styling */
+.testimonial-item h4 {
+  font-size: 1rem;
+  color: var(--accent-color);
+  margin-bottom: 15px;
+  font-weight: 600;
+}
+
+/* Description Styling */
+.testimonial-item p {
+  font-size: 0.95rem;
+  color: color-mix(in srgb, var(--default-color), transparent 20%);
+  margin: 0;
+  line-height: 1.6;
+  transition: color 0.3s ease;
+}
+
+.testimonial-item:hover p {
+  color: var(--default-color);
+}
+
+/* Shine Effect on Hover */
+.achievement-item::after,
+.testimonial-item::after {
+  content: '';
+  position: absolute;
+  top: -50%;
+  left: -100%;
+  width: 50%;
+  height: 200%;
+  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.1), transparent);
+  transform: rotate(45deg);
+  transition: left 0.5s ease;
+}
+
+.achievement-item:hover::after,
+.testimonial-item:hover::after {
+  left: 200%;
+}
+
+/* Pulse Animation for Icons */
+@keyframes iconPulse {
+  0%, 100% { transform: scale(1); }
+  50% { transform: scale(1.05); }
+}
+
+.testimonial-item:hover i {
+  animation: iconPulse 2s ease-in-out infinite;
+}
+
+/* Swiper Pagination Customization */
+.testimonials .swiper-pagination {
+  margin-top: 30px;
+  position: relative;
+}
+
+.testimonials .swiper-pagination .swiper-pagination-bullet {
+  width: 12px;
+  height: 12px;
+  background-color: color-mix(in srgb, var(--default-color), transparent 85%);
+  opacity: 1;
+  transition: all 0.3s ease;
+}
+
+.testimonials .swiper-pagination .swiper-pagination-bullet-active {
+  background-color: var(--accent-color);
+  width: 30px;
+  border-radius: 6px;
+  box-shadow: 0 4px 10px rgba(var(--accent-color-rgb), 0.4);
+}
+
+/* Profile Image Slider with Fixed Size Container */
+.profile-image-slider {
+  position: relative;
+  overflow: hidden;
+  border-radius: 12px;
+  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.3);
+  perspective: 1000px;
+  height: 500px; /* Fixed height prevents page jumping */
+  width: 100%;
+  background: #f0f0f0; /* Fallback background */
+}
+
+.slider-image {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover; /* Maintains aspect ratio, covers container */
+  transition: none;
+  display: none;
+  backface-visibility: hidden;
+  border-radius: 12px;
+}
+
+.slider-image.active {
+  display: block;
+}
+
+/* Responsive heights for different screen sizes */
+@media (max-width: 1200px) {
+  .profile-image-slider {
+    height: 450px;
+  }
+}
+
+@media (max-width: 992px) {
+  .profile-image-slider {
+    height: 400px;
+  }
+}
+
+@media (max-width: 768px) {
+  .profile-image-slider {
+    height: 350px;
+    margin-bottom: 20px;
+  }
+}
+
+@media (max-width: 576px) {
+  .profile-image-slider {
+    height: 300px;
+  }
+}
+
+/* 3D Flip Animations (for odd-numbered transitions) */
+@keyframes flipInFromRight {
+  from {
+    transform: rotateY(90deg);
+    opacity: 0;
+  }
+  to {
+    transform: rotateY(0deg);
+    opacity: 1;
+  }
+}
+
+@keyframes flipOutToLeft {
+  from {
+    transform: rotateY(0deg);
+    opacity: 1;
+  }
+  to {
+    transform: rotateY(-90deg);
+    opacity: 0;
+  }
+}
+
+@keyframes flipInFromLeft {
+  from {
+    transform: rotateY(-90deg);
+    opacity: 0;
+  }
+  to {
+    transform: rotateY(0deg);
+    opacity: 1;
+  }
+}
+
+@keyframes flipOutToRight {
+  from {
+    transform: rotateY(0deg);
+    opacity: 1;
+  }
+  to {
+    transform: rotateY(90deg);
+    opacity: 0;
+  }
+}
+
+/* Slide Animations (for even-numbered transitions) */
+@keyframes slideInFromRight {
+  from {
+    transform: translateX(100%);
+    opacity: 0;
+  }
+  to {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+
+@keyframes slideOutToLeft {
+  from {
+    transform: translateX(0);
+    opacity: 1;
+  }
+  to {
+    transform: translateX(-100%);
+    opacity: 0;
+  }
+}
+
+@keyframes slideInFromLeft {
+  from {
+    transform: translateX(-100%);
+    opacity: 0;
+  }
+  to {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+
+@keyframes slideOutToRight {
+  from {
+    transform: translateX(0);
+    opacity: 1;
+  }
+  to {
+    transform: translateX(100%);
+    opacity: 0;
+  }
+}
+
+/*--------------------------------------------------------------
+# CV Download Button Enhancements
+--------------------------------------------------------------*/
+
+/* Resume Section Gradient Button */
+.btn-primary {
+  transition: all 0.3s ease;
+}
+
+.btn-primary:hover {
+  background: linear-gradient(135deg, #764ba2 0%, #667eea 100%) !important;
+  box-shadow: 0 6px 20px rgba(102, 126, 234, 0.6) !important;
+  transform: scale(1.05);
+}
+
+.btn-primary:active {
+  transform: scale(0.98);
+  box-shadow: 0 2px 10px rgba(102, 126, 234, 0.4) !important;
+}
+
+/* Service Details Sidebar Download Link */
+.download-catalog a {
+  transition: all 0.3s ease;
+}
+
+.download-catalog a:hover {
+  background: var(--accent-color);
+  color: var(--contrast-color);
+  border-color: var(--accent-color);
+  transform: translateX(5px);
+}
+
+.download-catalog a:hover i {
+  color: var(--contrast-color);
+  transform: scale(1.1);
+}
+
+/* About Page CTA Buttons */
+.btn-outline-primary {
+  transition: all 0.3s ease;
+}
+
+.btn-outline-primary:hover {
+  background: var(--accent-color);
+  color: var(--contrast-color);
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+}
