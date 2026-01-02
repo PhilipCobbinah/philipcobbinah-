@@ -59,6 +59,25 @@
     footer .social-links a:hover i {
       filter: brightness(0.85);
     }
+
+    /* GLightbox close button styling */
+    .gclose {
+      width: 40px !important;
+      height: 40px !important;
+      background: rgba(255, 255, 255, 0.9) !important;
+      border-radius: 50% !important;
+      top: 20px !important;
+      right: 20px !important;
+    }
+
+    .gclose svg {
+      width: 20px !important;
+      height: 20px !important;
+    }
+
+    .gclose:hover {
+      background: #fff !important;
+    }
   </style>
 </head>
 
@@ -919,8 +938,7 @@
                 <div class="portfolio-info">
                   <h4>ENACTUS Global Member 🌍</h4>
                   <p>Global Network Membership</p>
-                  <a href="assets/img/portfolio/ENACTUS%20Global%20Membership%20certificate.jpeg" title="ENACTUS Global Membership Certificate" data-gallery="portfolio-gallery-leadership" class="glightbox preview-link"><i class="bi bi-zoom-in"></i></a>
-                  <a href="assets/img/portfolio/ENACTUS%20Global%20Membership%20certificate.jpeg" title="View Certificate" class="details-link"><i class="bi bi-link-45deg"></i></a>
+                  <a href="assets/img/portfolio/ENACTUS%20Global%20Membership%20certificate.jpeg" title="ENACTUS Global Membership Certificate" data-gallery="portfolio-gallery-certificates" class="glightbox preview-link"><i class="bi bi-zoom-in"></i></a>
                 </div>
               </div>
             </div><!-- End Portfolio Item -->
@@ -931,8 +949,7 @@
                 <div class="portfolio-info">
                   <h4>Hult Prize National 🏅</h4>
                   <p>National Competition Certificate</p>
-                  <a href="assets/img/portfolio/hult%20prize-national%20certificate.PNG" title="Hult Prize National Competition Certificate" data-gallery="portfolio-gallery-leadership" class="glightbox preview-link"><i class="bi bi-zoom-in"></i></a>
-                  <a href="assets/img/portfolio/hult%20prize-national%20certificate.PNG" title="View Certificate" class="details-link"><i class="bi bi-link-45deg"></i></a>
+                  <a href="assets/img/portfolio/hult%20prize-national%20certificate.PNG" title="Hult Prize National Competition Certificate" data-gallery="portfolio-gallery-certificates" class="glightbox preview-link"><i class="bi bi-zoom-in"></i></a>
                 </div>
               </div>
             </div><!-- End Portfolio Item -->
@@ -943,23 +960,22 @@
                 <div class="portfolio-info">
                   <h4>ENACTUS Conference 🌐</h4>
                   <p>International Conference Participation</p>
-                  <a href="assets/img/portfolio/ENACTUS%20Global%20certificate.jpeg" title="ENACTUS International Conference Participation Certificate" data-gallery="portfolio-gallery-leadership" class="glightbox preview-link"><i class="bi bi-zoom-in"></i></a>
-                  <a href="assets/img/portfolio/ENACTUS%20Global%20certificate.jpeg" title="View Certificate" class="details-link"><i class="bi bi-link-45deg"></i></a>
+                  <a href="assets/img/portfolio/ENACTUS%20Global%20certificate.jpeg" title="ENACTUS International Conference Participation Certificate" data-gallery="portfolio-gallery-certificates" class="glightbox preview-link"><i class="bi bi-zoom-in"></i></a>
                 </div>
               </div>
             </div><!-- End Portfolio Item -->
 
             <!-- Add this new portfolio item - update image path after converting PDF to JPG -->
             <div class="col-lg-4 col-md-6 portfolio-item isotope-item filter-leadership">
-              <a href="global-diplomats-2026.html" class="portfolio-link">
-                <div class="portfolio-content h-100">
-                  <img src="assets/img/portfolio/leadership/diplomats/philip-cobbinah.jpeg" class="img-fluid" alt="Global Diplomats Conference 2026">
-                  <div class="portfolio-info">
-                    <h4>Global Diplomats Conference 2026</h4>
-                    <p>Selected Delegate - Bengaluru, India 🇮🇳</p>
-                  </div>
+              <div class="portfolio-content h-100">
+                <img src="assets/img/portfolio/leadership/diplomats/philip-cobbinah.jpeg" class="img-fluid" alt="Global Diplomats Conference 2026">
+                <div class="portfolio-info">
+                  <h4>Global Diplomats Conference 2026</h4>
+                  <p>Selected Delegate - Bengaluru, India 🇮🇳</p>
+                  <a href="assets/img/portfolio/leadership/diplomats/philip-cobbinah.jpeg" title="Global Diplomats Conference 2026 - Selected Delegate" data-gallery="portfolio-gallery-leadership" class="glightbox preview-link"><i class="bi bi-zoom-in"></i></a>
+                  <a href="global-diplomats-2026.html" title="View Full Gallery" class="details-link"><i class="bi bi-link-45deg"></i></a>
                 </div>
-              </a>
+              </div>
             </div>
 
           </div><!-- End Portfolio Container -->
@@ -1266,7 +1282,6 @@
   <!-- Image Slider JavaScript with Alternating Animations -->
   <script>
     document.addEventListener('DOMContentLoaded', function() {
-      // ADD THIS DIAGNOSTIC CODE AT THE TOP
       const images = document.querySelectorAll('.slider-image');
       console.log('Total images found:', images.length);
       images.forEach((img, index) => {
@@ -1382,7 +1397,6 @@
       const whatsappLink = document.querySelector('a[href*="wa.me"]');
       
       if(whatsappLink) {
-        // Add hover effect to parent container
         const whatsappContainer = whatsappLink.closest('.info-item');
         
         if(whatsappContainer) {

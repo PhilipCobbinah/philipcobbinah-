@@ -291,6 +291,34 @@
       transform: scale(1.02);
     }
 
+    .gallery-item .preview-link {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      width: 60px;
+      height: 60px;
+      background: rgba(26, 35, 126, 0.8);
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: white;
+      font-size: 1.5rem;
+      opacity: 0;
+      transition: all 0.3s ease;
+      z-index: 5;
+    }
+
+    .gallery-item:hover .preview-link {
+      opacity: 1;
+    }
+
+    .gallery-item .preview-link:hover {
+      background: rgba(26, 35, 126, 1);
+      transform: translate(-50%, -50%) scale(1.1);
+    }
+
     .gallery-info {
       position: absolute;
       bottom: 0;
@@ -449,11 +477,12 @@
         </div>
 
         <div class="row justify-content-center" data-aos="fade-up" data-aos-delay="200">
-          
+
           <div class="col-lg-8 col-md-10">
             <div class="gallery-item">
-              <a href="assets/img/portfolio/leadership/diplomats/philip-cobbinah.jpeg" data-gallery="diplomats-gallery" class="glightbox">
-                <img src="assets/img/portfolio/leadership/diplomats/philip-cobbinah.jpeg" alt="Delegate Selection Letter">
+              <img src="assets/img/portfolio/leadership/diplomats/philip-cobbinah.jpeg" alt="Delegate Selection Letter">
+              <a href="assets/img/portfolio/leadership/diplomats/philip-cobbinah.jpeg" data-gallery="diplomats-gallery" class="glightbox preview-link">
+                <i class="bi bi-zoom-in"></i>
               </a>
               <div class="gallery-info">
                 <h4><i class="bi bi-envelope-paper text-warning"></i> Official Selection Letter</h4>
